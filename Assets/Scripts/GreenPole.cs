@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GreenPole : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float _greePoleSpeed = 2f;
     void Start()
     {
         
@@ -13,6 +13,6 @@ public class GreenPole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.left * _greePoleSpeed * Time.deltaTime);
     }
 }
