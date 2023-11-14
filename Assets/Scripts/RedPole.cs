@@ -20,4 +20,6 @@ public class RedPole : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    
 }

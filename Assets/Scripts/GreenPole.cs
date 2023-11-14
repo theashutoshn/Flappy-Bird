@@ -34,6 +34,7 @@ public class GreenPole : MonoBehaviour
         if(other.gameObject.CompareTag("Bird"))
         {
             Destroy(other.gameObject);
+            Time.timeScale = 0f;
         }
         
     }

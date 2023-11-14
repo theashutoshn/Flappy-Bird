@@ -26,4 +26,12 @@ public class Bird : MonoBehaviour
         rb.velocity = Vector2.up * jumpForce; // Applies upward force
     }
 
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Base"))
+        {
+            Destroy(this.gameObject);
+            Time.timeScale = 0f;
+        }
+    }
 }
