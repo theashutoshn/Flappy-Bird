@@ -23,9 +23,18 @@ public class GreenPole : MonoBehaviour
         transform.Translate(Vector3.left * _greePoleSpeed * Time.deltaTime);
         //Instantiate(_coinPrefab, _coinSpawnLoc.transform.position, Quaternion.identity);
 
-        if(transform.position.x < -3.4f)
+        if(transform.position.x < -5.4f)
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Bird"))
+        {
+            Destroy(other.gameObject);
+        }
+        
     }
 }
