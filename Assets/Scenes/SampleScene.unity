@@ -498,6 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _greenPolePrefab: {fileID: 5083899837183842461, guid: 66f481a36b215bf49b5bbc20e42b40ba, type: 3}
   _redPolePrefab: {fileID: 1475625541605218392, guid: 9c194c06c8b5c5d4bbac562ef1f5ffa2, type: 3}
+  _diamondPrefab: {fileID: 6473610495417207391, guid: f75ec6686ae030b4e84cfb1e667b91fa, type: 3}
 --- !u!4 &866944012
 Transform:
   m_ObjectHideFlags: 0

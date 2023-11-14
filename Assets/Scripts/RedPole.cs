@@ -14,5 +14,10 @@ public class RedPole : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * _redPoleSpeed * Time.deltaTime);
+
+        if (transform.position.x < -3.4f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
