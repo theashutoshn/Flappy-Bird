@@ -12,8 +12,11 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _diamondPrefab;
+
+    
     void Start()
     {
+       
         StartCoroutine(GreenPoleSpawner());
         //StartCoroutine(RedRoleSpawner());
         //StartCoroutine(DiamondSpawner());
@@ -54,4 +57,5 @@ public class SpawnManager : MonoBehaviour
     //        yield return new WaitForSeconds(5f);
     //    }
     //}
+    
 }

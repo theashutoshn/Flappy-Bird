@@ -7,6 +7,8 @@ public class Bird : MonoBehaviour
     public float jumpForce = 3f; // Adjust the force as needed
     private Rigidbody2D rb;
 
+    public int score;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +20,12 @@ public class Bird : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // 0 is for left click or touch
         {
             Jump();
+        }
+
+        if(transform.position.y > 4.95f)
+        {
+            Destroy(this.gameObject);
+            Time.timeScale = 0f;
         }
     }
 
@@ -33,5 +41,15 @@ public class Bird : MonoBehaviour
             Destroy(this.gameObject);
             Time.timeScale = 0f;
         }
+    }
+
+    //public void OnDeath()
+    //{
+
+    //}
+
+    public void Score()
+    {
+        score += 1;
     }
 }
