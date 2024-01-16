@@ -9,9 +9,12 @@ public class Bird : MonoBehaviour
 
     public int score;
 
+    public GameObject canvas;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
@@ -36,11 +39,11 @@ public class Bird : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Base"))
+        if (other.gameObject.CompareTag("Obstacle"))
         {
             Destroy(this.gameObject);
             Time.timeScale = 0f;
-
+            canvas.SetActive(true);
         }
     }
 
