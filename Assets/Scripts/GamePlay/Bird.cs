@@ -17,7 +17,7 @@ public class Bird : MonoBehaviour
     void Update()
     {
         // Detects player input
-        if (Input.GetMouseButtonDown(0)) // 0 is for left click or touch
+        if (Input.GetMouseButtonDown(0) || (Input.GetKey(KeyCode.Space))) // 0 is for left click or touch
         {
             Jump();
         }
@@ -40,6 +40,7 @@ public class Bird : MonoBehaviour
         {
             Destroy(this.gameObject);
             Time.timeScale = 0f;
+
         }
     }
 
