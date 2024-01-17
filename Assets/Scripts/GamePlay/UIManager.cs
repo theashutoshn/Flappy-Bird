@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    
-    public GameObject _gameOver;
+
+    [SerializeField]
+    private Image _gameOver;
+
+     
     void Start()
     {
         
@@ -18,9 +21,9 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void Restart()
+    public void GameOver()
     {
-        _gameOver.SetActive(false);
+        _gameOver.gameObject.SetActive(true);
         Time.timeScale = 1f;
         
     }

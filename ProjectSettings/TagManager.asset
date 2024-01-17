@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Bird
   - Obstacle
-  - Gameover
+  - GameManager
+  - Base
   layers:
   - Default
   - TransparentFX

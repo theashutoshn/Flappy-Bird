@@ -9,12 +9,13 @@ public class Bird : MonoBehaviour
 
     public int score;
 
-    public GameObject canvas;
+    private GameManager _gameManager;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -39,11 +40,12 @@ public class Bird : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("Base"))
         {
+            Debug.LogError("Base Hit");
             Destroy(this.gameObject);
             Time.timeScale = 0f;
-            canvas.SetActive(true);
+            _gameManager.GameOver();
         }
     }
 
@@ -53,6 +55,7 @@ public class Bird : MonoBehaviour
     //}
 
     public void Score()
+
     {
         score += 1;
     }

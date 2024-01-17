@@ -9,6 +9,8 @@ public class GreenPole : MonoBehaviour
     private Bird _bird;
 
     private bool _scoreIncreamented = false;
+
+    private GameManager _gameManager;
     //[SerializeField]
     //private GameObject _coinPrefab;
 
@@ -17,6 +19,7 @@ public class GreenPole : MonoBehaviour
 
     void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _bird = GameObject.Find("Bird").GetComponent<Bird>();
         if(_bird == null)
         {
@@ -47,7 +50,7 @@ public class GreenPole : MonoBehaviour
         if(other.gameObject.CompareTag("Bird"))
         {
             Destroy(other.gameObject);
-            Time.timeScale = 0f;
+            _gameManager.GameOver();
         }
         
     }
