@@ -42,7 +42,6 @@ public class Bird : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Base"))
         {
-            Debug.LogError("Base Hit");
             Destroy(this.gameObject);
             Time.timeScale = 0f;
             _gameManager.GameOver();
