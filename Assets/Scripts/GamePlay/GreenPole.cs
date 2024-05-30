@@ -35,7 +35,7 @@ public class GreenPole : MonoBehaviour
 
         if(transform.position.x < -2.02 && !_scoreIncreamented)
         {
-            _bird.Score();
+            _bird.Score(1);
             _scoreIncreamented = true;
         }
         

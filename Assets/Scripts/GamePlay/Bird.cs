@@ -9,6 +9,7 @@ public class Bird : MonoBehaviour
 
     public int score;
 
+    private UIManager _uiManager;
     private GameManager _gameManager;
     
 
@@ -16,6 +17,11 @@ public class Bird : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        if(_uiManager == null)
+        {
+            Debug.LogError("UIManager is not found");
+        }
     }
 
     void Update()
@@ -53,9 +59,12 @@ public class Bird : MonoBehaviour
 
     //}
 
-    public void Score()
+    public void Score(int points)
 
     {
-        score += 1;
+        score += points;
+        _uiManager.UpdateScore(score);
     }
+
+
 }
