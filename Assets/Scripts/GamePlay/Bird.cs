@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+    private Touch touch;
     public float jumpForce = 3f; // Adjust the force as needed
     private Rigidbody2D rb;
 
     public int score;
+
+  
 
     private UIManager _uiManager;
     private GameManager _gameManager;
@@ -17,7 +20,7 @@ public class Bird : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         if(_uiManager == null)
         {
             Debug.LogError("UIManager is not found");
@@ -31,6 +34,9 @@ public class Bird : MonoBehaviour
         {
             Jump();
         }
+
+        
+
 
         if(transform.position.y > 4.95f)
         {

@@ -15,10 +15,13 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image _gameOver;
 
+    public Image[] digitImages;
+    public Sprite[] numberSprite;
      
     void Start()
     {
         _bird = GetComponent<Bird>();
+        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -36,8 +39,19 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScore(int birdScore)
     {
-        scoreText.text = birdScore.ToString();
+        //scoreText.text = birdScore.ToString();
+
+        string scoreString = birdScore.ToString().PadLeft(digitImages.Length, '0');
+       for (int i = 0; i < digitImages.Length; i++)
+        {
+            int digit = int.Parse(scoreString[i].ToString());
+            digitImages[i].sprite = numberSprite[digit];
+        }
+       
+
     }
+
+    
 
 
 }
