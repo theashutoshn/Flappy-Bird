@@ -16,6 +16,8 @@ public class DoubleClickToStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetMouseButtonDown(0) | (Input.GetKeyDown(KeyCode.Space)))
         {
             if (Time.time - lastClickTime < doubleClickTime)
@@ -42,4 +44,6 @@ public class DoubleClickToStart : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    
 }

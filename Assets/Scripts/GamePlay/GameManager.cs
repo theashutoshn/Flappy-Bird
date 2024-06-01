@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _restartPanel;
 
+    [SerializeField]
+    private GameObject _resumePanel;
+
     void Start()
     {
         
@@ -19,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PauseGame();
     }
 
     public void GameOver()
@@ -35,5 +38,21 @@ public class GameManager : MonoBehaviour
         _restartPanel.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
+    }
+
+    public void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 0;
+            _resumePanel.SetActive(true);
+        }
+
+    }
+
+    public void Resume()
+    {
+        _resumePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }
