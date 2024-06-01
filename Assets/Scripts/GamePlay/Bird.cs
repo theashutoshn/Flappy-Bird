@@ -35,7 +35,15 @@ public class Bird : MonoBehaviour
             Jump();
         }
 
-        
+        if(Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
+            if(touch.phase == TouchPhase.Began)
+            {
+                Jump();
+            }
+        }
 
 
         if(transform.position.y > 4.95f)
