@@ -55,4 +55,13 @@ public class GameManager : MonoBehaviour
         _resumePanel.SetActive(false);
         Time.timeScale = 1;
     }
+
+    public void ResetOption()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            Restart();
+        }
+    }
+
 }
